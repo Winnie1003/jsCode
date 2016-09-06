@@ -1,1 +1,2 @@
-js practice
+primary js practice
+ 
