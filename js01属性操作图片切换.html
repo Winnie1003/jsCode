@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            text-align:center;
+        }
+        #content{
+            width:400px;
+            height:400px;
+            margin:80px auto 0;
+            position:relative;
+        }
+        #img{
+            width:400px;
+            height:400px;
+
+        }
+        #content a{
+            text-decoration:none;
+            width:40px;
+            height:40px;
+            background:#ccc;
+            line-height:40px;
+            filter: alpha(opacity:60);
+            opacity: 0.6s;
+            font-size:22px;
+        }
+        #content a:hover{
+            filter:alpha(opacity:30); opacity:0.3;
+        }
+        #prev{
+            position: absolute;
+            top:175px;
+            left:10px;
+        }
+        #next{
+            position: absolute;
+            top:175px;
+            right:10px;
+        }
+        #span1{
+            position:absolute;
+            left:0;
+            width:400px;
+            height:30px;
+            line-height:30px;
+            bottom:0px;
+            background:#000;;
+            filter:alpha(opacity:80);
+            opacity:0.8;
+            color:#fff;
+        }
+        input{
+            position:absolute;
+            margin:10px 0px;
+            background: #fcac45;
+            border:0;
+            outline:none;
+            cursor:pointer;
+            color:#fff;
+            padding:5px 10px;
+        }
+        #input1{
+            top:-45px;
+            left:125px;
+        }
+        #input2{
+            top:-45px;
+            right:125px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <input id="input1" type="button" value="自动播放">
+    <input id="input2" type="button" value="切换播放">
+    <a id="prev" href="javascript:;">&lt</a>
+    <a id="next" href="javascript:;">&gt</a>
+    <img id="img" src="img/1.jpg" alt="">
+    <span id="span1"></span>
+</div>
+</body>
+<script>
+    window.onload = function(){
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var oImg = document.getElementById('img');
+        var oSpan = document.getElementById('span1');
+        var oInput1 = document.getElementById('input1');
+        var oInput2 = document.getElementById('input2');
+        var arrUrl = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+        //初始化
+        var num = 0;
+        oSpan.innerHTML = '第'+(num+1)+'/'+arrUrl.length+'张';
+        oImg.src = arrUrl[num];
+        var clearTime = null;
+
+        //点击自动播放
+        oInput1.onclick = function(){
+            autoPlay();
+        };
+        //循环切换播放
+        oInput2.onclick = function(){
+            clickPLay();
+        };
+
+        function tab(){
+            oSpan.innerHTML = '第'+(num+1)+'/'+arrUrl.length+'张';
+            oImg.src = arrUrl[num];
+        }
+        function autoPlay(){
+            clearTime = setInterval(function(){
+                num++;
+                if(num < arrUrl.length){
+                    tab();
+
+                }
+                if(num == arrUrl.length){
+                    num = -1;
+                    num++;
+                    tab();
+                }
+            },1000);
+        }
+
+        function clickPLay(){
+
+            oNext.onclick = function(){
+                num++;
+                if(num < arrUrl.length){
+                    tab();
+
+                }
+                if(num == arrUrl.length){
+                    num = -1;
+                    num++;
+                    tab();
+                }
+            }
+            oPrev.onclick = function(){
+                num--;
+                if(num < arrUrl.length){
+                    tab();
+                }
+                if(num == -1){
+                    num = arrUrl.length-1;
+                    tab();
+                }
+            }
+        }
+    }
+</script>
+</html>
