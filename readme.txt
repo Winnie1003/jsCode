@@ -1,2 +1,1 @@
-primary js practice
- 02
+PRIMARY JS PRACTICE.
