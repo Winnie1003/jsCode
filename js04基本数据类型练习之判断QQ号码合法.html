@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断QQ号的输入合法性</title>
+</head>
+<body>
+请输入QQ号码：<input id="txt" type="text" />
+<input id="btn" type="button" value="判断" />
+
+
+<br />
+1、有没有输入<br />
+2、输入的是不是数字<br />
+3、不能有0在前面<br />
+4、不能是小数<br />
+5、输入的数字必须在5位以上、10位以内<br />
+</body>
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn');
+        var oTxt = document.getElementById('txt');
+        oBtn.onclick = function() {
+            if (oTxt.value == '') {
+                alert('1.输入不能为空！');
+            } else if (typeof (oTxt.value) != 'number' && isNaN(oTxt.value)) {
+                alert('2.输入的不是数字！');
+            } else if (oTxt.value.charAt(0) == 0) {
+                alert('3.不能0在前面！');
+            } else if (parseFloat(oTxt.value) != parseInt(oTxt.value)) {
+                alert('4.不能是小数！');
+            }else if(oTxt.value.length<5 || oTxt.value.length>10){
+                alert('5.输入的数字必须在5位以上、10位以内!');
+            }else{
+                alert('输入合法！');
+            }
+        }
+    };
+
+</script>
+</html>
