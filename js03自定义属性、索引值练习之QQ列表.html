@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ列表</title>
+    <style>
+        ul,h2{
+            margin:0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #list{
+            width:240px;
+            margin:0 auto;
+            border:1px solid #333;
+
+        }
+        #list h2{
+            height:30px;
+            line-height:30px;
+            text-indent:20px;
+            /*background-color:#6ff;6ff*/
+            background: url("img/ico1.gif") no-repeat 5px center #66ffff;
+        }
+        .li1 li{
+            font-size:16px;
+            height:30px;
+            line-height:30px;
+            text-indent: 24px;
+            border-bottom:1px solid #333;
+        }
+        li.lastLi{
+            border:none;
+        }
+        #list .active{
+            background:url("img/ico2.gif") no-repeat 5px center #ff9;
+        }
+        #list ul{
+            display:none;
+        }
+        .hover{
+            background: #fdecab;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li class="li1">
+       <h2>
+           我的好友
+       </h2>
+        <ul>
+            <li>李颖</li>
+            <li>邓画画</li>
+            <li>张毅</li>
+            <li>徐柳</li>
+        </ul>
+    </li>
+    <li class="li1">
+        <h2>大学同学</h2>
+        <ul>
+            <li>涂樱</li>
+            <li>陆子君</li>
+            <li>章碧莹</li>
+            <li>罗丽芳</li>
+        </ul>
+    </li>
+    <li class="li1">
+        <h2>黑名单</h2>
+        <ul>
+            <li>张三</li>
+            <li class="lastLi">李四</li>
+        </ul>
+    </li>
+</ul>
+</body>
+<script>
+    window.onload = function(){
+        var aH2 =  document.getElementsByTagName('h2');
+        var oList = document.getElementById('list');
+        var aUl = oList.getElementsByTagName('ul');
+        var arrLi = [];
+        var aLi = null;
+        var onOff = true;
+        for(var i=0;i<aH2.length;i++){
+            aH2[i].index = i;
+            aH2[i].onclick = function(){
+                for(var i=0;i<aH2.length;i++){
+                    if(i != this.index){
+                        aH2[i].className = '';
+                        aUl[i].style.display = 'none';
+                    }
+                }
+                if(this.className == ''){
+                    aH2[this.index].className = 'active';
+                    aUl[this.index].style.display = 'block';
+                }else{
+                    aH2[this.index].className = '';
+                    aUl[this.index].style.display = 'none';
+                }
+
+            }
+        }
+        for(var i = 0;i<aUl.length;i++){
+            aLi = aUl[i].getElementsByTagName('li');
+            for(var j=0;j<aLi.length;j++){
+                arrLi.push(aLi[j]);
+            }
+        }
+
+        for(var i=0;i<arrLi.length;i++){
+            arrLi[i].index = i;
+            arrLi[i].onclick = function(){
+                for(var i=0;i<arrLi.length;i++){
+                    if(i != this.index){
+                        arrLi[i].className = '';
+                    }
+                }
+                if(this.className == ''){
+                    arrLi[this.index].className = 'hover';
+                }else{
+                    arrLi[this.index].className = '';
+                }
+
+            }
+        }
+    }
+
+</script>
+</html>
