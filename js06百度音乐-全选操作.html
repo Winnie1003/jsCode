@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度音乐-全选操作</title>
+</head>
+<style>
+    body,div,ul,li{
+        margin:0;
+        padding:0;
+    }
+    @font-face {font-family: 'iconfont';
+        src: url('iconfont/iconfont.eot'); /* IE9*/
+        src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+        url('iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+    }
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:14px;
+        font-style:normal;
+        color:grey;
+    }
+
+    #content{
+        width:400px;
+        margin:50px auto;
+        border:1px solid #2C4C5D;
+    }
+    li{
+        list-style:none;
+    }
+    #content #list ul li{
+        list-style: none;
+        height:34px;
+        line-height:34px;
+        background: #F7FFFF;
+        border:1px solid #fff;
+        position: relative;
+    }
+    #content #list ul li span{
+        position:absolute;
+        font-size:14px;
+    }
+    #content #list ul li input{
+        margin:0 20px;
+    }
+    #content #list ul li span.singer{
+        right:30px;
+    }
+    #content #list ul li .song{
+        margin-right:40px;
+    }
+    #content #toolbar ul{
+        height:40px;
+    }
+    #content #toolbar ul li:first-child{
+        margin-left:18px;
+        margin-right:36px;
+    }
+    #content #toolbar ul li{
+        float:left;
+        margin:10px;
+    }
+    #content #toolbar li a{
+        text-decoration:none;
+        font-size:14px;
+        color:black;
+    }
+    #content #toolbar li a{
+        border:1px solid #2C4C5D;
+        padding:5px 10px;
+        border-radius:4px;
+    }
+    #content #toolbar li i{
+        margin-right:4px;
+         }
+    #content #toolbar .collect,#content .toolbar .add,#content .toolbar .delete{
+
+
+    }
+</style>
+<body>
+<div id="content">
+    <div id="list">
+        <ul >
+            <li>
+                <input type="checkbox">
+                <span class="song">童话镇</span>
+                <span class="singer">暗杠</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span class="song">贝加尔湖畔</span>
+                <span class="singer">李健</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span class="song">Nothing hurts like this</span>
+                <span class="singer">Slo</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span class="song">霜雪千年</span>
+                <span class="singer">囧菌+双笙</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span class="song">偶尔还是会想起你</span>
+                <span class="singer">牛奶咖啡</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span class="song">春夏秋冬</span>
+                <span class="singer">张国荣</span>
+            </li>
+        </ul>
+    </div>
+    <div id="toolbar">
+        <ul>
+            <li class="selectAll">
+                <input type="checkbox">
+                <span>全选</span>
+            </li>
+            <li class="collect"><a href="javascript:"><i class="icon iconfont">&#xe633;</i><span>收藏</span></a></li>
+            <li class="add"><a href="javascript:"><i class="icon iconfont">&#xe627;</i><span>添加</span></a></li>
+            <li class="delete"><a href="javascript:"><i class="icon iconfont">&#xe606;</i><span>删除</span></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function(){
+        var oContent = document.getElementById('content');
+        var oToolbar = document.getElementById('toolbar');
+        var oList = document.getElementById('list');
+        var listUl = oList.getElementsByTagName('ul');
+        var alistLi = listUl[0].getElementsByTagName('li');
+        var aUl = oToolbar.getElementsByTagName('ul');
+        var oSelectAll = aUl[0].getElementsByClassName('selectAll');
+        var oInp = oSelectAll[0].getElementsByTagName('input');
+        oInp[0].onclick = function(){
+            for(var i=0;i<alistLi.length;i++){
+                if(oInp[0].checked == true){
+                    alistLi[i].getElementsByTagName('input')[0].checked = true;
+                }else{
+                    alistLi[i].getElementsByTagName('input')[0].checked = false;
+                }
+
+            }
+        }
+
+    }
+</script>
+</html>
