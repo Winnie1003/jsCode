@@ -75,11 +75,11 @@
     }
     #content #toolbar li i{
         margin-right:4px;
-         }
-    #content #toolbar .collect,#content .toolbar .add,#content .toolbar .delete{
-
-
     }
+    #toolbar .button{
+        opacity:0.3;
+    }
+
 </style>
 <body>
 <div id="content">
@@ -123,9 +123,9 @@
                 <input type="checkbox">
                 <span>全选</span>
             </li>
-            <li class="collect"><a href="javascript:"><i class="icon iconfont">&#xe633;</i><span>收藏</span></a></li>
-            <li class="add"><a href="javascript:"><i class="icon iconfont">&#xe627;</i><span>添加</span></a></li>
-            <li class="delete"><a href="javascript:"><i class="icon iconfont">&#xe606;</i><span>删除</span></a></li>
+            <li class="button" id="collect"><a href="javascript:"><i class="icon iconfont">&#xe633;</i><span>收藏</span></a></li>
+            <li class="button" id="add"><a href="javascript:"><i class="icon iconfont">&#xe627;</i><span>添加</span></a></li>
+            <li class="button" id="delete"><a href="javascript:"><i class="icon iconfont">&#xe606;</i><span>删除</span></a></li>
         </ul>
     </div>
 </div>
@@ -139,7 +139,11 @@
         var alistLi = listUl[0].getElementsByTagName('li');
         var aUl = oToolbar.getElementsByTagName('ul');
         var oSelectAll = aUl[0].getElementsByClassName('selectAll');
+        var aBtn = aUl[0].getElementsByClassName('button');
         var oInp = oSelectAll[0].getElementsByTagName('input');
+
+
+
         oInp[0].onclick = function(){
             for(var i=0;i<alistLi.length;i++){
                 if(oInp[0].checked == true){
@@ -147,8 +151,24 @@
                 }else{
                     alistLi[i].getElementsByTagName('input')[0].checked = false;
                 }
+            }
+            for(var i=0;i<aBtn.length;i++){
+                if(oInp[0].checked == true){
+                    aBtn[i].style.opacity = '1';
+                }else{
+                    aBtn[i].style.opacity = '0.3';
+                }
 
             }
+        };
+        for(var i=0;i<alistLi.length;i++){
+            alistLi[i].index = i;
+            alistLi[i].onmouseover = function(){
+                alistLi[this.index].style.backgroundColor = '#eee';
+            };
+            alistLi[i].onmouseout = function(){
+                alistLi[this.index].style.backgroundColor = ''
+            };
         }
 
     }
