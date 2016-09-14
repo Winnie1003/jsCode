@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝商品广告效果</title>
+</head>
+<style>
+    html,body,div,ul,li{
+        margin:0;
+        padding:0;
+    }
+    .wrap{
+        width:292px;
+        margin:50px auto;
+        padding:5px;
+        border:1px solid #66ffff;
+        overflow:hidden;
+
+    }
+    a{
+        text-decoration:none;
+        font-size:12px;
+
+    }
+    img{
+        float:left;
+    }
+    li{
+        width:40px;
+        list-style:none;
+        border:1px solid #6ff;
+        text-align:center;
+        padding:3px 0;
+    }
+    .left{
+        width:52px;
+        float:left;
+        padding-left:4px;
+    }
+    .right{
+        float:left;
+        padding-left:10px;
+    }
+</style>
+<body>
+<div class="wrap">
+    <div class="left">
+        <ul>
+            <li><a href="">连衣裙</a></li>
+            <li><a href="">雪纺</a></li>
+            <li><a href="">T恤</a></li>
+            <li><a href="">铅笔裤</a></li>
+            <li><a href="">婚纱</a></li>
+            <li><a href="">外套</a></li>
+            <li><a href="">连体裤</a></li>
+        </ul>
+    </div>
+    <img src="img/t1.png" alt="">
+    <div class="right">
+        <ul>
+            <li><a href="">包包</a></li>
+            <li><a href="">凉鞋</a></li>
+            <li><a href="">单鞋</a></li>
+            <li><a href="">太阳镜</a></li>
+            <li><a href="">丝袜</a></li>
+            <li><a href="">帆布鞋</a></li>
+            <li><a href="">情侣装</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function(){
+        var aLi = document.getElementsByTagName('li');
+        var oImg = document.getElementsByTagName('img')[0];
+        var images = ['img/t1.png','img/t2.png','img/t3.png','img/t4.png','img/t5.png','img/t6.png',
+            'img/t7.png','img/t8.png','img/t9.png','img/t10.png','img/t11.png','img/t12.png','img/t13.png',
+            'img/t13.png'];
+        var timer = null;
+        var num = 0;
+        function clearAll(){
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].style.background = '#fff';
+                aLi[i].getElementsByTagName('a')[0].style.color = '#000';
+            }
+        }
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseout = function(){
+                this.style.background = '#FFF';
+                this.getElementsByTagName('a')[0].style.color = '#000';
+                timer = setInterval(autoplay, 1000);
+            }
+            aLi[i].onmouseover = function(){
+                clearInterval(timer);
+                clearAll();
+                this.style.background = '#00d2dc';
+                this.getElementsByTagName('a')[0].style.color = '#fff';
+                oImg.src = images[this.index];
+            }
+        }
+
+        function autoplay(){
+            clearAll();
+
+            aLi[num].style.background = '#00d2dc';
+            aLi[num].getElementsByTagName('a')[0].style.color = '#fff';
+            oImg.src = images[num];
+
+            if(num<aLi.length/2){
+                num++;
+                if (num == aLi.length/2) {
+                    num = aLi.length - 1;
+                }
+            } else {
+                num--;
+                if (num == aLi.length/2 - 1) {
+                    num = 0;
+                }
+            }
+        }
+
+        timer = setInterval(autoplay, 1000);
+    }
+</script>
+</html>
