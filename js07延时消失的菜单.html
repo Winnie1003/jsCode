@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>isotope</title>
+    <title>延时消失的菜单</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        div,ul,li{
+            margin:0;
+            padding:0;
+        }
+        .navbar-default{
+            background-color:#215a9c;
+        }
+        .navbar-default .container-fluid .navbar-header a,.navbar-default .container-fluid div ul li a{
+            color:#fff;
+        }
+        .nav>li{
+            margin:0 20px;
+        }
+        li{
+            list-style: none;
+        }
+        ul.item{
+            height: 20px;
+            line-height:20px;
+            background:#E3ECF1;
+            padding:0 10px;
+            border-radius:10px;
+            text-align:center;
+            padding-left:18px;
+            overflow:hidden;
+            display:none;
+        }
+        ul.item li a{
+            font-size:14px;
+        }
+        #mv-home{
+            width:282px;
+            position:relative;
+            left:10px;
+        }
+
+        #mv-home li,#mv-about li,#mv-works li,#mv-blog li{
+            float:left;
+
+        }
+        #mv-home li:after,#mv-about li:after,#mv-works li:after,#mv-blog li:after{
+            content:"|";
+            margin:5px;
+        }
+        #mv-about{
+            clear:left;
+            width:310px;
+            position:relative;
+            left:40px;
+        }
+        #mv-works{
+            width:263px;
+            position:relative;
+            left:150px;
+        }
+        #mv-blog{
+            width:377px;
+            position:relative;
+            left:240px;
+        }
+
+
+    </style>
 
     <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -17,12 +81,99 @@
     <![endif]-->
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand list" href="">妙味首页</a>
+        </div>
+        <div id="myCollapse">
+            <ul class="nav navbar-nav">
+                <li><a href="" class="list">关于我们</a></li>
+                <li><a href="" class="list">作品</a></li>
+                <li><a href="" class="list">博客</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<ul id="mv-home" class="item">
+    <li><a href="">最新更新</a></li>
+    <li><a href="">活动</a></li>
+    <li><a href="">报名试听</a></li>
+    <li><a href="">学员反馈</a></li>
+</ul>
+
+<ul id="mv-about" class="item">
+    <li><a href="">妙味讲师</a></li>
+    <li><a href="">培训方式</a></li>
+    <li><a href="">培训理念</a></li>
+    <li><a href="">联系我们</a></li>
+</ul>
+
+<ul id="mv-works" class="item">
+    <li><a href="">班固</a></li>
+    <li><a href="">MATRIX</a></li>
+    <li><a href="">ECMall</a></li>
+    <li><a href="">留学E网</a></li>
+</ul>
+
+<ul id="mv-blog" class="item">
+    <li><a href="">js教程</a></li>
+    <li><a href="">弹出层效果</a></li>
+    <li><a href="">3D球面标签云</a></li>
+    <li><a href="">window计算器</a></li>
+</ul>
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script>
+    window.onload = function(){
+        var timer = null;
+        var aItem = document.getElementsByClassName('item');
+        var oContainer = document.getElementsByClassName('container-fluid');
+        var aA = oContainer[0].getElementsByTagName('a');
+        for(var i=0;i<aItem.length;i++){
+            //鼠标停在主导航链接上的动作
+            aA[i].index = i;
+            aItem[i].index = i;
+            aA[i].onmouseover = function(){
+                for(var j=0;j<aA.length;j++){
+                    aItem[j].style.display = 'none';
+                }
+                aItem[this.index].style.display = 'block';
+                clearTimeout(timer);
+            }
+            //鼠标离开主导航链接上的动作
+            aA[i].onmouseout = function(){
+                var that = this.index;
+                timer = setInterval(function(){
+                    aItem[that].style.display = 'none';
+                },2000)
+            }
+            //鼠标悬浮在子主导航链接上的动作
+            aItem[i].onmouseover = function(){
+                clearTimeout(timer);
+                this.style.display = 'block';
+            }
+            //鼠标移开悬浮在子主导航链接上的动作
+            aItem[i].onmouseout = function(){
+                that = this.index;
+                timer = setInterval(function(){
+                    aItem[that].style.display = 'none';
+                },1000)
+            }
 
+        }
+
+
+    }
 </script>
 </body>
 </html>
