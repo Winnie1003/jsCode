@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+<body>
+</body>
+<script>
+    var aBox = document.getElementsByTagName('div');
+
+    var onoff = true;
+    var len = 10;
+    var str = '';
+
+    for(var i=0; i<len;i++){
+        str += '<div style="width:50px; height:50px; background:#ccc;position:absolute; transform:5s; top:160px; left:'+i*60+'px"></div>'
+    }
+    document.body.innerHTML = str;
+
+    document.onclick = function(){
+        var num = 0;
+        var timer = null;
+        if(onoff){
+            timer= setInterval(function(){
+                doMove(aBox[num],'top',23,500);
+                num++;
+                if(num === len){
+                    clearInterval(timer);
+                }
+            },100)
+            onoff = false;
+        }else{
+            timer= setInterval(function(){
+                doMove(aBox[num],'top',23,100);
+                num++;
+                if(num === len){
+                    clearInterval(timer);
+                }
+            },100)
+            onoff = true;
+        }
+
+    }
+
+
+
+    function doMove(obj,attr,dir,target,endFn){
+        dir = parseInt(getStyle(obj,attr))<target?dir:-dir; //dir
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function(){
+            //alert(parseInt(getStyle(oBox,"left"))+10)
+            var speed = parseInt(getStyle(obj,attr))+dir //步长
+            obj.style[attr] = speed+'px';
+            if(speed>target && dir>0 || speed<target && dir<0){     //qian
+                speed = target;
+            }
+            if(speed==target){
+                clearInterval(obj.timer)
+                /*if(endFn){
+                 endFn()
+                 }
+                 */
+                endFn && endFn();
+            }
+        },10)
+    }
+    function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];}
+</script>
+</html>
