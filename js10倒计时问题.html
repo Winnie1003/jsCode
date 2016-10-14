@@ -2,22 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>倒计时</title>
+    <title>倒计时实例</title>
+    <style>
+        .t1{
+            width:400px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var aInput = document.getElementsByClassName('t1');
+            var oBtn = document.getElementById('btn');
+            var timer = null;
+            var tNow = null;
+            var tNew = null;
+            var t = null;
+            var str = '';
+            oBtn.onclick = function(){
+                tNew = new Date(aInput[0].value);//    var tNew = new Date(2016,9,15,10,20,0);
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    tNow = new Date();
+                    t = Math.floor((tNew-tNow)/1000);
+                    if(t>=0){
+                        str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+Math.floor(t%60)+'秒';
+                        aInput[1].value = str;
+                    }else{
+                        clearInterval(timer);
+                    }
+
+                },1000);
+            };
+        };
+
+
+
+    </script>
 </head>
 <body>
+距离：<input class="t1" type="text" value="October 14,2016 11:26:50"><br>
+还剩：<input class="t1" type="text"><input id="btn" type="button" value="开始倒计时吧">
 
-<script>
-    var tNow = new Date();
-    var tNew = new Date(2016,9,15,10,20,0);
-    var t = Math.floor((tNew-tNow)/1000);
-    var str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+Math.floor(t%60)+'秒';
-    alert(str);
-
-    // 天：Math.floor(t/86400)
-    // 时：Math.floor(t%86400/3600)
-    // 分：Math.floor(t%86400%3600/60)
-    // 秒：t%60
-
-</script>
 </body>
 </html>
