@@ -33,7 +33,7 @@
                 if ( num === arr.length ) {
                     clearInterval( obj.shake );
                     endFn && endFn();
-                    obj.onOff = false;
+                    obj.onOff = false;//已经停止抖动
                 }
             }, 50);
         }

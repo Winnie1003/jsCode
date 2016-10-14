@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+
+<script>
+    var tNow = new Date();
+    var tNew = new Date(2016,9,15,10,20,0);
+    var t = Math.floor((tNew-tNow)/1000);
+    var str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+Math.floor(t%60)+'秒';
+    alert(str);
+
+    // 天：Math.floor(t/86400)
+    // 时：Math.floor(t%86400/3600)
+    // 分：Math.floor(t%86400%3600/60)
+    // 秒：t%60
+
+</script>
+</body>
+</html>
