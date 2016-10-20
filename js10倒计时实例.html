@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时实例</title>
+    <style>
+        html,body,ul{
+            padding:0;
+            margin:0;
+        }
+        body{
+            padding:10px;
+        }
+        .showcase{
+        }
+        h1{
+            font-size:14px;
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+            width:186px;
+            height:279px;
+            border-top:1px solid #A0A0A4;
+            display:inline-block;
+            position:relative;
+        }
+        .box{
+            position:absolute;
+            top:0;
+            left:0;
+            padding:5px;
+            margin:0 2px;
+        }
+        .box p{
+            font-size:12px;
+        }
+        .box p .price{
+            color: #BD214A;
+            font-weight: bold;
+        }
+        .box input[type='text']{
+            width:106px;
+            height:12px;
+            background:#DED6E7;
+            font-size:12px;
+        }
+        .box input[type='button']{
+            width:36px;
+            border:none;
+            background:#fff;
+            color:#847373;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .box .timeoff{
+            font-size: 14px;
+            color: #A0A0A4;
+            text-align: center;
+        }
+        .box img{
+            width:110px;
+            height:90px;
+            margin:10px;
+        }
+        table{
+            clear:left;
+            width: 726px;
+            background: #DED6E7;
+            text-align: center;
+            font-size: 14px;
+            color: #522121;
+            font-weight: bold;
+            border-collapse: collapse;
+        }
+        table .gName{
+            width:300px;
+        }
+        table .gPrice{
+            width:150px;
+        }
+        #total{
+            weight:bold;
+            font-size:20px;
+        }
+        #total .all{
+            color: #BD214A;
+        }
+    </style>
+</head>
+<body>
+<h1>限购时间</h1>
+<ul class="showcase">
+    <li>
+        <div class="box">
+            <input type="text" value="October 28, 2016 10:00:00">
+            <input type="button" value="确定">
+            <p class="timeoff">剩余00天00时00分00秒</p>
+            <img src="img/t1.png" alt="">
+            <p>疯狂199，青绿色连衣裙</p>
+            <p><span>抢购价</span><span class="price">￥</span><span class="price">199.00</span></p>
+        </div>
+    </li>
+    <li>
+        <div class="box">
+            <input type="text" value="October 28, 2016 10:0:0">
+            <input type="button" value="确定">
+            <p class="timeoff">剩余00天00时00分00秒</p>
+            <img src="img/t2.png" alt="">
+            <p>疯狂299，套裙</p>
+            <p><span>抢购价</span><span class="price">￥</span><span class="price">229.00</span></p>
+        </div>
+    </li>
+    <li>
+        <div class="box">
+            <input type="text" value="October 28, 2016 10:0:0">
+            <input type="button" value="确定">
+            <p class="timeoff">剩余00天00时00分00秒</p>
+            <img src="img/t3.png" alt="">
+            <p>疯狂129，粉色砂质连衣裙</p>
+            <p><span>抢购价</span><span class="price">￥</span><span class="price">129.00</span></p>
+        </div>
+    </li>
+    <li>
+        <div class="box">
+            <input type="text" value="October 28, 2016 10:0:0">
+            <input type="button" value="确定">
+            <p class="timeoff">剩余00天00时00分00秒</p>
+            <img src="img/t4.png" alt="">
+            <p>疯狂299，淡雅帆布连衣裙</p>
+            <p><span>抢购价</span><span class="price">￥</span><span class="price">299.00</span></p>
+        </div>
+    </li>
+</ul>
+<table>
+    <thead>
+    <tr>
+        <td class="gName">商品名称</td>
+        <td class="gPrice">价钱</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<p id="total">
+    总价
+    <span class="all">00.00</span>
+    元
+</p>
+<script>
+    window.onload = function(){
+
+    }
+</script>
+</body>
+</html>

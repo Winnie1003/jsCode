@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.倒计时抢购商品</title>
+	<style type="text/css">
+		body { margin: 0; padding: 0; font-family: "微软雅黑"; }
+		ul,p, h2 { margin: 0; padding: 0; }
+		ul li { list-style: none; }
+		a { text-decoration: none; }
+		span { display: inline-block; }
+		#product, #product_show, #product_show, #list, #product_details, .title, #product_list { width: 1094px; }
+		#product { margin: 50px auto; overflow: hidden; }
+		#product h2 { padding: 10px; color: #aca5a5; border-bottom: 5px solid #c9c9c9; }
+		#product_show { height: 420px; margin-top: 10px; overflow: hidden;}
+		#list { height: 374px; }
+		#list li { width: 240px; height: 370px; float: left; padding: 15px; border-right: 3px solid #ccc; position: relative;
+		}
+		#list li div { width: 240px; height: 383px; position: absolute; left: 10px; top: 15px; opacity: 1; }
+		#list input { width: 180px; height: 20px; outline: none; }
+		#list button { width: 50px; height: 25px;  border: none; outline: none; background-color: #fff; color: #aa0a0a; font-size: 18px; font-weight: bold; cursor: pointer;}
+		#list p { width: 160px; margin-left: 20px; margin-top: 10px;}
+		.content { height: 50px; }
+		#list span a { color: #bc2c2c; font-weight: bold; }
+
+		/* 商品详情样式 */
+		#product_details { overflow: hidden; position: relative; margin-top: 60px; }
+		.title { height: 70px; background-color: #f6d5ec; width: 1094px; }
+		.title span { width: 65px; height: 70px; line-height: 70px; text-align: center; color: #bc2c2c; font-weight: bold; }
+		.title_name { margin-left: 140px;  }
+		.title_price { margin-left: 260px; }
+		#product_list, .active { height: 110px; margin-top: 10px; background-color: #f6d5ec; overflow: hidden; position: relative;}
+		.product_name, .product_price { position: absolute; top: 0; line-height: 110px; }
+		.product_name { left: 65px; }
+		.product_price { left: 475px; color: #bc2c2c; font-weight: bold; }
+		.product_img { display: inline-block; position: absolute; right: 105px; border: 1px solid #bc2c2c; }
+		#product_total, #product_total a { font-size: 30px; font-weight: bold; margin-top: 30px;}
+		#product_total a { color: #bc2c2c; }
+	</style>
+	<script src="../miaov.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var oUl = $('list');
+			var aLi = oUl.getElementsByTagName('li');
+			var oProduct = $('product_details');
+			var oTotal = $('product_total');
+			var oDiv = null;
+			var oInput = null;
+			var t = 0;
+			var str = '';
+
+			for (var i = 0; i < aLi.length; i++) {
+				oDiv = aLi[i].getElementsByTagName('div')[0];
+				oInput = oDiv.getElementsByTagName('input')[0];
+				var oButton = oDiv.getElementsByTagName('button')[0];
+				var oP = oDiv.getElementsByTagName('p')[0];
+				var oImg = oDiv.getElementsByTagName('img')[0];
+
+				//调用点击事件
+				clickEve(oButton, oP, oInput, oImg, aLi[i], oDiv);
+			}
+
+			function clickEve(oButton, oP, oInput, oImg, li, oDiv){
+				oButton.onclick = function(){
+					showCountdown(oP, oInput, oImg, li, oDiv);
+				}
+			}
+			
+			// //页面显示剩余时间
+			function showCountdown(p, input, img, li, div){
+				var iNewTime = new Date(input.value);
+				clearInterval(div.timer);
+				div.timer = setInterval(function(){
+					var iNowTime = new Date();
+					t = Math.floor((iNewTime - iNowTime)/1000);
+					if (t>=0) {
+						str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
+						p.innerHTML = "剩余"+str;
+					}else{
+						clearInterval(div.timer);
+						//调用抖动函数
+						var _this = li;
+						if (!_this.shake){
+							fnShake(li, div, 'left', img, function(){
+								//抖动完成后，调用doMove方法，让div往下掉，同时调用透明度方法
+								opacity(div, 0.05, 0.5, function(){
+									li.style.background = 'url(../img/shopping/5.png) no-repeat';
+									doMove(div, 'top', 10, 400,function(){
+										opacity(div, 0.08, 0);
+										if (parseInt(getStyle(div, 'top')) === 400) {
+											//获取商品名称和价钱
+											var product_name = div.getElementsByTagName('span')[0].innerHTML;
+											var span2 = div.getElementsByTagName('span')[1];
+											var span2_a = span2.getElementsByTagName('a')[0].innerHTML;
+											var product_price = Number(span2_a.slice(1));
+											var product_img = div.getElementsByTagName('img')[0].src;
+											
+											//新创建一个div存放商品信息
+											var product = document.createElement('div');
+											oProduct.appendChild(product);
+											product.className = 'active';
+											product.innerHTML = '<span class="product_name">'+product_name+'</span><span class="product_price">'+product_price+'</span><a href="#" class="product_img"><img src="'+product_img+'" width="100"  height="100" alt=""></a>';
+
+											//调用计算总价方法
+											addTotal(product_price);
+										}
+									});
+								});
+							});
+						}
+					}
+				}, 1000);
+			};
+			
+			//抖动函数封装
+			function fnShake(li, div, attr, oImg, endFn){
+				var arr = [];
+				var num = 0;
+				var divPos = parseInt(getStyle(div, attr));
+				console.log(divPos);
+				for (var i = 20; i>0; i-=2) {
+					arr.push(i,-i);
+				}
+
+				div.shake = setInterval(function(){
+					div.style[attr] = divPos + arr[num] + "px";
+					num++;
+					if (num == arr.length) {
+						clearInterval(div.shake);
+						div.shake = undefined;
+						num = 0;
+						endFn && endFn();
+					}
+				}, 50)
+			}
+			
+			// //透明度方法封装
+			function opacity(obj, dir, target, endFn){
+				var dir = parseFloat(getStyle(obj, 'opacity')) < target ? dir : -dir; //判断当前对象的透明度与目标进行对比
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					var speed = parseFloat(getStyle(obj, 'opacity')) + dir;
+					if (speed > target && dir > 0 || speed < target && dir < 0) {
+						speed = target;
+					}
+					obj.style.opacity = speed;
+					if (speed == target) {
+						clearInterval(obj.timer);
+						endFn && endFn();
+					}
+				},30);
+			}	
+			
+			//计算总价
+			function addTotal(nowPrice){
+				var total_a = oTotal.getElementsByTagName('a')[0].innerHTML;
+				var oldPrice = Number(total_a)	;
+				var total = oldPrice + nowPrice;
+				oTotal.innerHTML = '';
+				oTotal.innerHTML = '总价：<a href="#">'+total+'</a>元';
+			}
+
+			//获取行外样式
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];	
+				}else {
+					return getComputedStyle(obj,0)[attr];
+				}
+			};
+
+			//doMove
+			function doMove (obj, attr, dir, target, endFn) {
+				dir = parseInt(getStyle(obj,attr)) < target ? dir : -dir;
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					var speed = parseInt(getStyle(obj,attr)) + dir;
+					if (speed > target && dir > 0 || speed < target && dir < 0 ) {
+						speed = target;
+					}
+					obj.style[attr] =  speed + "px";
+					if (speed == target) {
+						clearInterval(obj.timer);
+						// if (endFn) {
+						// 	endFn();
+						// }
+						endFn && endFn(); //回调函数
+					}
+				}, 30);
+			};
+		});
+
+	</script>
+</head>
+<body>
+	<div id="product">
+		<h2>限购时间</h2>
+		<div id="product_show">
+			<ul id="list">
+				<li>
+					<div>
+						<input type="text" value="August 11, 2016 17:00:00">
+						<button>确定</button>
+						<p>剩余0天0小时0分0秒</p>
+						<img src="../img/shopping/1.png" alt=""><br/>
+						<span class="content">疯狂599，美的爆款隐藏式面板下拉门微波炉</span><br/>
+						<span class="price">抢购价：<a href="#">￥599.00</a></span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<input type="text" value="August 11, 2016 17:00:00">
+						<button>确定</button>
+						<p>剩余0天0小时0分0秒</p>
+						<img src="../img/shopping/2.png" alt=""><br/>
+						<span class="content">疯狂3299，三星超薄高性能配置笔记本</span><br/>
+						<span class="price">抢购价：<a href="#">￥3299.00</a></span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<input type="text" value="August 11, 2016 17:00:00">
+						<button>确定</button>
+						<p>剩余0天0小时0分0秒</p>
+						<img src="../img/shopping/3.png" alt=""><br/>
+						<span class="content">甩卖仅需1元，后街男孩珍藏版100首精选专辑</span><br/>
+						<span class="price">抢购价：<a href="#">￥1.00</a></span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<input type="text" value="August 11, 2016 17:00:00">
+						<button>确定</button>
+						<p>剩余0天0小时0分0秒</p>
+						<img src="../img/shopping/4.png" alt=""><br/>
+						<span class="content">欧美女包，风靡全球的女包，赶快抢购吧！</span><br/>
+						<span class="price">抢购价：<a href="#">￥168.00</a></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div id="product_details">
+			<div class="title">
+				<span class="title_name">商品名称</span>
+				<span class="title_price">价钱</span>
+			</div>
+			<!-- <div id="product_list" class="active">
+				<span class="product_name">疯狂599，美的爆款隐藏式面板下拉门微波炉</span>
+				<span class="product_price">599.00</span>
+				<a href="#" class="product_img"><img src="../img/shopping/1.png" width="100"  height="100" alt=""></a>
+			</div> -->
+		</div>
+		<span id="product_total">总价：<a href="#">00.00</a>元</span>
+	</div>
+</body>
+</html>

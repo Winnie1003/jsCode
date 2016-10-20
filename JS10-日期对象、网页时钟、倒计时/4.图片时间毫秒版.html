@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4.图片时间毫秒版</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oBody = document.body;
+			var oP = document.getElementById('time');
+			var aImg = document.getElementsByTagName('img');
+			var arr = [];
+			var timer = null;
+			timer = setInterval(fnTimer, 1);
+			fnTimer();
+			function fnTimer(){
+				var myTime = new Date();
+				var iHours = myTime.getHours();
+				var iMin = myTime.getMinutes();
+				var iSec = myTime.getSeconds();
+				var iMillSec = myTime.getMilliseconds();
+				var str = '';
+				str = toTwo(iHours)+":"+toTwo(iMin)+":"+toTwo(iSec)+"."+toThree(iMillSec);
+				oP.innerHTML = str;
+
+				for (var i = 0; i < str.length; i++) {
+					if ( i == 	2 || i == 5) {
+						aImg[i].src = 'img/colon.JPG';
+					}else if ( i == 8) {
+						aImg[i].src = 'img/10.JPG';
+					}else{
+						aImg[i].src = "img/"+str.charAt(i)+".JPG"
+					}
+				}
+			}
+		};
+
+		function toTwo(n){
+			return n < 10 ?  '0' + n : '' + n;
+		}
+		function toThree(n){
+			if (n<10) {
+				return '00' + n;
+			}else if(n<100){
+				return '0' + n;
+			}else{
+				return '' + n;
+			}
+		}
+	</script>
+</head>
+<body>
+	<p id="time" style="font-size:60px;"></p>
+	<img src="img/0.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/colon.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/colon.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/10.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+	<img src="img/0.JPG" alt="">
+</body>
+</html>

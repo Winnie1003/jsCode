@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.倒计时</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBody = document.body;
+			fnTime();
+			setInterval(fnTime, 1000);
+			function fnTime(){
+				var iTime = new Date();
+				var iNewTime = new Date(2016, 7, 10, 23, 13, 0);
+				var t = Math.floor((iNewTime - iTime)/1000); //将毫秒转换为秒
+			
+				var str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
+				oBody.innerHTML = '距离2016年8月10日 23:13:00 还有：'+str;
+				// 天：Math.floor(t/86400)
+				// 时：Math.floor(t%86400/3600)
+				// 分：Math.floor(t%86400%3600/60)
+				// 秒：t%60
+
+				//12个月英文
+				// January February March  April May June July August September October November December
+			}
+		};
+	</script>
+</head>
+<body style="font-size: 30px;">
+	
+</body>
+</html>
