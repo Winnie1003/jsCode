@@ -93,7 +93,7 @@
 <ul class="showcase">
     <li>
         <div class="box">
-            <input type="text" value="October 28, 2016 10:00:00">
+            <input class="time" type="text" value="October 28, 2016 10:00:00">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t1.png" alt="">
@@ -103,7 +103,7 @@
     </li>
     <li>
         <div class="box">
-            <input type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 28, 2016 10:0:0">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t2.png" alt="">
@@ -113,7 +113,7 @@
     </li>
     <li>
         <div class="box">
-            <input type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 28, 2016 10:0:0">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t3.png" alt="">
@@ -123,7 +123,7 @@
     </li>
     <li>
         <div class="box">
-            <input type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 28, 2016 10:0:0">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t4.png" alt="">
@@ -149,7 +149,85 @@
     元
 </p>
 <script>
+    function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];}
+    function shake ( obj, attr, endFn ) {
+
+        // if( !obj.shaked ) { return; }
+        var pos = parseInt( getStyle(obj, attr) );			// 有隐患的
+
+        var arr = [];			// 20, -20, 18, -18 ..... 0
+        var num = 0;
+        var timer = null;
+
+        for ( var i=10; i>0; i-=2 ) {
+            arr.push( i, -i );
+        }
+        arr.push(0);
+
+        // obj.shaked = false;
+        clearInterval( obj.shake );
+        obj.shake = setInterval(function (){
+            obj.style[attr] = pos + arr[num] + 'px';
+            num++;
+            if ( num === arr.length ) {
+                clearInterval( obj.shake );
+                // obj.shaked = true;
+                endFn && endFn();
+
+            }
+        }, 50);
+    }
+    function doMove(obj,attr,dir,target,endFn){
+        dir = parseInt(getStyle(obj,attr)) < target ? dir:-dir;
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = parseInt(getStyle(obj,attr))+dir;//步长
+            if(speed > target && dir > 0 || speed < target && dir < 0){
+                speed = target;
+            }
+            obj.style[attr] = speed+'px';
+            if(speed == target){
+                clearInterval(obj.timer);
+                endFn && endFn();
+            }
+        },30);
+    }
+
     window.onload = function(){
+        var aBox = document.getElementsByClassName('box');
+        var tNow = null;
+        var tNew = null;
+        var t = null;
+        var str = '';
+
+        function timeoff(box){
+            var oBtn = box.getElementsByTagName('input')[1];
+            var op = box.getElementsByTagName('p')[0];
+            oBtn.onclick = function(){
+                tNew = new Date(box.getElementsByTagName('input')[0].value);
+                clearInterval(box.timer);
+                box.timer = setInterval(function(){
+                    tNow = new Date();
+                    t = Math.floor((tNew-tNow)/1000);
+                    if(t>=0){
+                        str = '剩余'+Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+Math.floor(t%60)+'秒';
+                        op.innerHTML = str;
+                    }else{
+                        clearInterval(box.timer);
+                        shake(box,'left',function(){
+                            doMove(box,'top',10,310);
+                        });
+                    }
+                },1000);
+            }
+        }
+
+
+
+        for(var i=0;i<aBox.length;i++){
+            timeoff(aBox[i]);
+        }
+
 
     }
 </script>
