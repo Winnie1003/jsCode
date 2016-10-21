@@ -192,17 +192,39 @@
             }
         },30);
     }
-
+    function opacity(obj,step,target,frequency,endFn){
+        var currentOpacity = getStyle(obj,'opacity');
+        step = currentOpacity < target ? step : -step;
+        clearInterval(obj.alpha);
+        obj.alpha = setInterval(function(){
+            currentOpacity = getStyle(obj,'opacity')*100;
+            var nextOpacity = currentOpacity + step;
+            if(step > 0 && nextOpacity > target || step < 0 && nextOpacity < target){
+                nextOpacity = target;
+            }
+            obj.style.opacity = nextOpacity/100;
+            obj.style.filter = 'alpha(opacity:'+nextOpacity+')';
+            if(nextOpacity == target){
+                clearInterval(obj.alpha);
+                endFn && endFn();
+            }
+        },frequency);
+    }
     window.onload = function(){
         var aBox = document.getElementsByClassName('box');
         var tNow = null;
         var tNew = null;
         var t = null;
         var str = '';
+        oTbody = document.getElementsByTagName('tbody')[0];
+        oTotal = document.getElementById('total').getElementsByTagName('span')[0];
 
         function timeoff(box){
             var oBtn = box.getElementsByTagName('input')[1];
             var op = box.getElementsByTagName('p')[0];
+            var op1 = box.getElementsByTagName('P')[1];
+            var price = box.getElementsByTagName('span')[2].innerHTML;
+            var oImg = box.getElementsByTagName('img')[0];
             oBtn.onclick = function(){
                 tNew = new Date(box.getElementsByTagName('input')[0].value);
                 clearInterval(box.timer);
@@ -216,6 +238,11 @@
                         clearInterval(box.timer);
                         shake(box,'left',function(){
                             doMove(box,'top',10,310);
+                            opacity(box,10,0,30,function(){
+                                box.style.display = 'none';
+                                oTbody.innerHTML +='<tr><td><div>'+op1.innerHTML+'</div></td></tr>';
+                                oTotal.innerHTML = parseInt(oTotal.innerHTML)+parseFloat(price);
+                            });
                         });
                     }
                 },1000);
