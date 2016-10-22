@@ -15,10 +15,12 @@
         }
         h1{
             font-size:14px;
+            width:744px;
         }
         ul li{
             list-style-type: none;
             float:left;
+            background:url("img/down.png") 0 0 no-repeat;
             width:186px;
             height:279px;
             border-top:1px solid #A0A0A4;
@@ -27,6 +29,8 @@
         }
         .box{
             position:absolute;
+            background:#fff;
+            height:269px;
             top:0;
             left:0;
             padding:5px;
@@ -65,7 +69,7 @@
         }
         table{
             clear:left;
-            width: 726px;
+            width: 744px;
             background: #DED6E7;
             text-align: center;
             font-size: 14px;
@@ -73,11 +77,27 @@
             font-weight: bold;
             border-collapse: collapse;
         }
-        table .gName{
+        tbody tr td{
+            padding:10px 0;
+            border-top:4px solid #fff;
+            border-bottom:4px solid #fff;
+        }
+        tr td:first-child{
             width:300px;
         }
-        table .gPrice{
-            width:150px;
+        tr td:nth-child(2){
+            width:180px;
+        }
+        tbody tr td img{
+            width:80px;
+            height:51px;
+            border:1px solid #ccc;
+
+        }
+        tbody div{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
         }
         #total{
             weight:bold;
@@ -93,7 +113,7 @@
 <ul class="showcase">
     <li>
         <div class="box">
-            <input class="time" type="text" value="October 28, 2016 10:00:00">
+            <input class="time" type="text" value="October 22, 2016 14:00:00">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t1.png" alt="">
@@ -103,17 +123,17 @@
     </li>
     <li>
         <div class="box">
-            <input class="time" type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 22, 2016 14:00:00">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t2.png" alt="">
-            <p>疯狂299，套裙</p>
+            <p>疯狂229，套裙</p>
             <p><span>抢购价</span><span class="price">￥</span><span class="price">229.00</span></p>
         </div>
     </li>
     <li>
         <div class="box">
-            <input class="time" type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 22, 2016 14:00:00">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t3.png" alt="">
@@ -123,7 +143,7 @@
     </li>
     <li>
         <div class="box">
-            <input class="time" type="text" value="October 28, 2016 10:0:0">
+            <input class="time" type="text" value="October 22, 2016 14:00:00">
             <input type="button" value="确定">
             <p class="timeoff">剩余00天00时00分00秒</p>
             <img src="img/t4.png" alt="">
@@ -135,12 +155,23 @@
 <table>
     <thead>
     <tr>
-        <td class="gName">商品名称</td>
-        <td class="gPrice">价钱</td>
+        <td>商品名称</td>
+        <td>价钱</td>
         <td></td>
     </tr>
     </thead>
     <tbody>
+        <!--<tr>-->
+            <!--<td>-->
+                <!--<div>疯狂199，青绿色连衣裙</div>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<div>199</div>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<img src="img/t1.png" alt="">-->
+            <!--</td>-->
+        <!--</tr>-->
     </tbody>
 </table>
 <p id="total">
@@ -240,7 +271,8 @@
                             doMove(box,'top',10,310);
                             opacity(box,10,0,30,function(){
                                 box.style.display = 'none';
-                                oTbody.innerHTML +='<tr><td><div>'+op1.innerHTML+'</div></td></tr>';
+                                oTbody.innerHTML +='<tr><td><div>'+op1.innerHTML+'</div></td>'+'<td><div>'+price+'</div></td>'+
+                                '<td>'+'<img src="'+oImg.src+'" alt="">'+'</td>'+'</tr>';
                                 oTotal.innerHTML = parseInt(oTotal.innerHTML)+parseFloat(price);
                             });
                         });
