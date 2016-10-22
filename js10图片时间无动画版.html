@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片时间（无动画版）</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #div2{
+            margin:50px auto;
+            text-align:center;
+        }
+        #div2 img{
+            width:50px;
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2">
+    <img src="img/time0.JPG" alt="">
+    <img src="img/time0.JPG" alt="">
+    <img src="img/colon.JPG" alt="">
+    <img src="img/time0.JPG" alt="">
+    <img src="img/time0.JPG" alt="">
+    <img src="img/colon.JPG" alt="">
+    <img src="img/time0.JPG" alt="">
+    <img src="img/time0.JPG" alt="">
+</div>
+<script>
+    window.onload = function(){
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var aImg = document.getElementsByTagName('img');
+        var arrImg = ['img/time0.jpg','img/time1.jpg','img/time2.jpg','img/time3.jpg','img/time4.jpg',
+            'img/time5.jpg','img/time6.jpg','img/time7.jpg','img/time8.jpg','img/time9.jpg','img/colon.jpg'];
+        function fnTime(){
+            var myTime = new Date();
+            var iYear = myTime.getFullYear();
+            var iMonth = myTime.getMonth();
+            var iDate = myTime.getDate();
+            var iDay = myTime.getDay();
+            var iHour = myTime.getHours();
+            var iMinute = myTime.getMinutes();
+            var iSecond = myTime.getSeconds();
+            var str = '';
+            var str2 = '';
+
+            if(iDay === 0) iDay = '星期日';
+            if(iDay === 1) iDay = '星期一';
+            if(iDay === 2) iDay = '星期二';
+            if(iDay === 3) iDay = '星期三';
+            if(iDay === 4) iDay = '星期四';
+            if(iDay === 5) iDay = '星期五';
+            if(iDay === 6) iDay = '星期六';
+
+
+            str = iYear+'年'+iMonth+'月'+iDate+'日'+' '+iDay+' '+toTwo(iHour)+'时'+toTwo(iMinute)+'分'+toTwo(iSecond)+'秒';
+            oDiv1.innerHTML = str;
+            str2 = toTwo(iHour)+toTwo(iMinute)+toTwo(iSecond);
+
+            //没有动画效果的图片时间
+            aImg[0].src = arrImg[str2.charAt(0)];
+            aImg[1].src = arrImg[str2.charAt(1)];
+            aImg[3].src = arrImg[str2.charAt(2)];
+            aImg[4].src = arrImg[str2.charAt(3)];
+            aImg[6].src = arrImg[str2.charAt(4)];
+            aImg[7].src = arrImg[str2.charAt(5)];
+
+        }
+        function toTwo(n){
+            return n<10 ? '0'+n: ''+n;
+        }
+        setInterval(fnTime,1000);
+    }
+</script>
+</body>
+</html>
