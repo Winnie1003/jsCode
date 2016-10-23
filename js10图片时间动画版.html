@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片时间动画扩展版</title>
+    <style>
+        html, body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            display: inline-block;
+            width: 50px;
+            height: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            border: 0;
+            width: 50px;
+            height: 70px;
+        }
+        ul {
+            margin: 50px auto;
+            width: 400px;
+            font-size: 0;
+        }
+        li div {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/colon.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/colon.JPG" alt="">
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    <li>
+        <div>
+            <img src="img/time0.JPG" alt="">
+            <img src="img/time0.JPG" alt="">
+        </div>
+    </li>
+    </li>
+</ul>
+
+<script>
+    window.onload = function(){
+        var oUL = document.getElementsByTagName('ul')[0];
+        var aLi = document.getElementsByTagName('li');
+        function toTwo(n){
+            return n<10 ? '0'+n : ''+n;
+        }
+        function fnTime(){
+            var myTime = new Date();
+            var iHours = myTime.getHours();
+            var iMinutes = myTime.getMinutes();
+            var iSeconds = myTime.getSeconds();
+            var str = '';
+            str = toTwo(iHours)+':'+toTwo(iMinutes)+':'+toTwo(iSeconds);
+
+            function flip(li,id){
+                var oDiv = li.getElementsByTagName('div')[0];
+                var aImg = li.getElementsByTagName('img');
+                if(str.charAt(id) == ':'){
+                    aImg[0].src = 'img/colon.jpg';
+                    setTimeout(function(){
+                        aImg[0].src = 'img/colon2.jpg';
+                    },500);
+                }else{
+                    aImg[1].src = 'img/time'+str.charAt(id)+'.jpg';
+                    if(aImg[0].src != aImg[1].src){
+                        doMove(oDiv,'top',10,'-70',function(){
+                            aImg[0].src = aImg[1].src;
+                            oDiv.style.top = 0+'px';
+                        })
+                    }
+
+                }
+
+
+            }
+
+            for(var i=0;i<aLi.length;i++){
+                flip(aLi[i],i);
+            }
+        }
+
+
+        setInterval(fnTime,1000);
+
+    };
+
+    function doMove ( obj, attr, dir, target, endFn ) {
+
+        dir = parseInt(getStyle( obj, attr )) < target ? dir : -dir;
+
+        clearInterval( obj.timer );
+
+        obj.timer = setInterval(function () {
+
+            var speed = parseInt(getStyle( obj, attr )) + dir;			// 步长
+
+            if ( speed > target && dir > 0 ||  speed < target && dir < 0  ) {
+                speed = target;
+            }
+
+            obj.style[attr] = speed + 'px';
+
+            if ( speed == target ) {
+                clearInterval( obj.timer );
+
+                /*
+                 if ( endFn ) {
+                 endFn();
+                 }
+                 */
+                endFn && endFn();
+
+            }
+
+        }, 30);
+    }
+
+    function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
+</script>
+</body>
+</html>
