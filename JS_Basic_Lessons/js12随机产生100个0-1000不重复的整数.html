@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机产生100个0-1000不重复的整数</title>
+</head>
+<body>
+<div></div>
+<script>
+    window.onload = function(){
+        var arr = [];
+        var str = '';
+        var oDiv = document.getElementsByTagName('div')[0];
+        for(var i=0;i<100;i++){
+            //往数组里面追加100个
+            arr.push(Math.round(Math.random()*1000));
+
+            //去除重复的元素
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i] == arr[j]){
+                    arr.splice(j,1);//去除数组中重复的数(从第j个去除一个数)
+                    j--; //保证数组数量的比较
+                    i--;//保证数组数量及时更新
+                }
+            }
+        }
+
+        for(var i=0;i<100;i++){
+            str += (i<9 ? '0'+(i+1):(i+1))+':'+arr[i]+' ';
+            if((i+1) % 10 == 0) str += '<br>';
+        }
+        oDiv.innerHTML = str;
+    }
+</script>
+</body>
+</html>
