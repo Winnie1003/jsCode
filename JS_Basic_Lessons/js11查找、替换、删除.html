@@ -26,6 +26,49 @@
             top:0;
             right:0;
         }
+        #buttons a{
+            width:80px;
+            height:40px;
+            background-color: #94948c;
+            color:#fff;
+            font-size:16px;
+            line-height:40px;
+            text-align:center;
+            text-decoration:none;
+            display:none;
+            border-bottom:1px solid #efefe7;
+        }
+        #buttons a:first-child{
+            display:block;
+        }
+        #toolbox{
+            width:620px;
+            border:4px solid #666;
+            padding:20px;
+            position:relative;
+        }
+        #toolbox span{
+            padding:5px 20px;
+            cursor: pointer;
+        }
+        #replace,#research{
+            border-top:2px solid #94948c;
+            margin-top:3px;
+        }
+        #replace input[type='text'],#research input[type='text']{
+            padding:5px;
+            margin:20px 0;
+        }
+        #replace input[type='button'],#research input[type='button']{
+            padding:5px;
+        }
+        #close{
+            font-size:24px;
+            position:absolute;
+            top:0;
+            right:0;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -41,21 +84,28 @@
         <a href="javascript:">替换</a>
     </div>
     <div id="toolbox">
-        <div id="close"></div>
+        <div id="close">×</div>
         <span>查找</span>
         <span>替换</span>
-        <div class="research">
+        <div id="research">
             <input type="text">
             <input type="button" value="查找">
         </div>
-        <div class="replace">
+        <div id="replace">
             <input type="text">
             <input type="text">
             <input type="button" value="替换">
         </div>
     </div>
 </div>
-<div>
-</div>
+<script>
+    window.onload = function(){
+        var oButtons = document.getElementById('buttons');
+        var aA = oButtons.getElementsByTagName('a');
+        aA[0].onmouseover = function(){
+            
+        }
+    }
+</script>
 </body>
 </html>
