@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7370f2ee-de79-4dd9-99a3-41530196ed44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html" />
     </list>
     <ignored path="jsCode.iws" />
@@ -27,11 +26,11 @@
       <file leaf-file-name="js11查找、替换、删除.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6527778">
-              <caret line="186" column="61" selection-start-line="186" selection-start-column="61" selection-end-line="187" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.7916667">
+              <caret line="190" column="45" selection-start-line="190" selection-start-column="45" selection-end-line="190" selection-end-column="45" />
               <folding>
-                <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-                <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+                <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+                <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -315,8 +314,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -350,8 +349,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -385,8 +384,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -420,8 +419,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -455,8 +454,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -497,8 +496,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -539,8 +538,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -550,43 +549,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间动画版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时问题.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -620,8 +584,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -655,8 +619,43 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间动画版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时问题.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -725,11 +724,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6527778">
-          <caret line="186" column="61" selection-start-line="186" selection-start-column="61" selection-end-line="187" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.7916667">
+          <caret line="190" column="45" selection-start-line="190" selection-start-column="45" selection-end-line="190" selection-end-column="45" />
           <folding>
-            <marker date="1478355228903" expanded="true" signature="5328:5345" placeholder="..." />
-            <marker date="1478355228903" expanded="true" signature="6043:6060" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
+            <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
           </folding>
         </state>
       </provider>
