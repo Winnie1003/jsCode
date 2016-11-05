@@ -46,20 +46,26 @@
             border:4px solid #666;
             padding:20px;
             position:relative;
+            display: none;
         }
         #toolbox span{
             padding:5px 20px;
             cursor: pointer;
         }
-        #replace,#research{
+        #toolbox span.active{
+            background-color: #94948c;
+            color:#fff;
+        }
+        #replace,#search{
             border-top:2px solid #94948c;
             margin-top:3px;
         }
-        #replace input[type='text'],#research input[type='text']{
+        #replace input[type='text'],#search input[type='text']{
             padding:5px;
             margin:20px 0;
+            width:210px;
         }
-        #replace input[type='button'],#research input[type='button']{
+        #replace input[type='button'],#search input[type='button']{
             padding:5px;
         }
         #close{
@@ -87,7 +93,7 @@
         <div id="close">×</div>
         <span>查找</span>
         <span>替换</span>
-        <div id="research">
+        <div id="search">
             <input type="text">
             <input type="button" value="查找">
         </div>
@@ -102,9 +108,89 @@
     window.onload = function(){
         var oButtons = document.getElementById('buttons');
         var aA = oButtons.getElementsByTagName('a');
-        aA[0].onmouseover = function(){
-            
+        var oToolbox = document.getElementById('toolbox');
+        var oClose = document.getElementById('close');
+        var aSpan = oToolbox.getElementsByTagName('span');
+        var oSearch = document.getElementById('search');
+        var oReplace = document.getElementById('replace');
+        var searchInput = oSearch.getElementsByTagName('input')[0];
+        var searchBtn = oSearch.getElementsByTagName('input')[1];
+        var replaceInput1 = oReplace.getElementsByTagName('input')[0];
+        var replaceInput2 = oReplace.getElementsByTagName('input')[1];
+        var replaceBtn = oReplace.getElementsByTagName('input')[2];
+        var oP = document.getElementsByTagName('p')[0];
+        var str = oP.innerHTML;
+
+        aA[0].onclick = function(){
+            aA[1].style.display = 'block';
+            aA[2].style.display = 'block';
         }
+        aA[1].onclick = function(){
+            clearBtns();
+            searchShow();
+        }
+        aA[2].onclick = function(){
+            clearBtns();
+            replaceShow();
+        }
+        oClose.onclick = function(){
+            oToolbox.style.display = 'none';
+        }
+        aSpan[0].onclick = searchShow;
+        aSpan[1].onclick = replaceShow;
+        function clearBtns(){
+            aA[1].style.display = 'none';
+            aA[2].style.display = 'none';
+            oToolbox.style.display = 'block';
+        }
+        function searchShow(){
+            aSpan[0].className = 'active';
+            aSpan[1].className = '';
+            oReplace.style.display = 'none';
+            oSearch.style.display = 'block';
+        }
+        function replaceShow(){
+            aSpan[0].className = '';
+            aSpan[1].className = 'active';
+            oReplace.style.display = 'block';
+            oSearch.style.display = 'none';
+        }
+        searchBtn.onclick = function(){
+            if(!searchInput.value){
+                alert('输入为空！请输入您要查找的内容！');
+                oP.innerHTML = str;
+            }else{
+                if(str.indexOf(searchInput.value) == -1){
+                    alert('对不起，没有找到您输入的内容【'+searchInput.value+'】');
+                    oP.innerHTML = str;
+                    searchInput.value = '';
+                }else{
+                    oP.innerHTML = str;
+                    var arr = str.split(searchInput.value);
+                    oP.innerHTML = arr.join('<span style="background:yellow">'+searchInput.value+'</span>');
+                    searchInput.value = '';
+                }
+            }
+        }
+
+        replaceBtn.onclick = function(){
+            if(!replaceInput1.value){
+                alert('输入为空！请输入您替换的内容!');
+                oP.innerHTML = str;
+            }else{
+                if(str.indexOf(replaceInput1.value) == -1){
+                    alert('对不起，没有找到您要替换的内容【'+replaceInput1.value+'】');
+                    oP.innerHTML = str;
+                    searchInput[0].value = '';
+                }else{
+                    oP.innerHTML = str;
+                    var arr = str.split(replaceInput1.value);
+                    oP.innerHTML = arr.join('<span style="background:yellow">'+replaceInput2.value+'</span>');
+                    searchInput.value = '';
+                }
+            }
+        }
+
     }
 </script>
 </body>
