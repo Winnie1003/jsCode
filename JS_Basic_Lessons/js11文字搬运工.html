@@ -105,10 +105,10 @@
             var arr = str.split('');
             var aLi = oProgress.getElementsByTagName('li');
             var m = n = 0;
+            oRight.innerHTML = '';
             oAll.innerHTML = arr.length;
             oCurrent.innerHTML = 0;
             this.style.opacity = 0.5;
-            oRight.innerHTML = '';
             opacity(oProgress,10,100);
             timer = setInterval(function(){
                 var lf = oLeft.value;
