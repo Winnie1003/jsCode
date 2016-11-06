@@ -3,10 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <title>文字搬运工</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            width:840px;
+            margin:50px auto;
+        }
+        textarea{
+            width: 320px;
+            height:220px;
+            border:2px solid #2C4C5D;
+            float:left;
+            outline: none;
+            font-size:18px;
+            padding:10px;
+            margin:0 8px;
+            resize:none;
+        }
+        #center{
+            width:120px;
+            float:left;
+            text-align: center;
+        }
+        #center a{
+            text-decoration: none;
+            padding:5px;
+            background:#f50;
+            color:#fff;
+            font-size:16px;
+            display:block;
+        }
+        #center p{
+            font-size:20px;
+            font-family:"微软雅黑";
+        }
+        #center ul{
+            margin:0;
+            padding:0;
+            font-size:0;
+            opacity:0;
+        }
+        li {
+            width: 8px;
+            height: 10px;
+            background: #E7A521;
+            display: inline-block;
+            list-style: none;
+            margin:2px;
+        }
+        #right{
+            width:320px;
+            height:220px;
+            border:2px solid #2C4C5D;
+            float:left;
+            font-size:18px;
+            padding:10px;
+            margin:0 8px;
+        }
+    </style>
 </head>
 <body>
 <div id="wrap">
+    <textarea name="" id="left" cols="30" rows="10"></textarea>
+    <div id="center">
+        <a href="javascript:">把文字右移</a>
+        <p><span id="current">0</span>/<span id="all">0</span></p>
+        <ul id="progress">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="right">
 
+    </div>
 </div>
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementsByTagName('a')[0];
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var oCurrent = document.getElementById('current');
+        var oAll = document.getElementById('all');
+        var oP = document.getElementsByTagName('p')[0];
+        var oProgress = document.getElementById('progress');
+        var timer = null;
+        oBtn.onclick = function(){
+            if(!oLeft.value){
+                alert("请在左侧输入一些文本之后再点按钮！");
+                return;
+            }
+            var str = oLeft.value;
+            var arr = str.split('');
+            var aLi = oProgress.getElementsByTagName('li')
+            var m = n = 0;
+            oAll.innerHTML = arr.length;
+            oCurrent.innerHTML = 0;
+            this.style.opacity = 0.5;
+            oRight.innerHTML = '';
+            opacity(oProgress,10,100);
+            timer = setInterval(function(){
+                var lf = oLeft.value;
+                oLeft.value = lf.substring(1);
+                oRight.innerHTML += arr[m];
+                m++;
+                oCurrent.value = m;
+
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].style.background = '#E7A521';
+                }
+
+                aLi[n].style.background = 'red';
+                n++;
+                if(n == aLi.length) n=0;
+                if(m == arr.length){
+                    clearInterval(timer);
+                    oBtn.style.opacity = 1;
+                    opacity(oProgress,10,0);
+                }
+            },80);
+        }
+    }
+    function opacity(obj,step,target,frequency,endFn){
+        var currentOpacity = getStyle(obj,'opacity');
+        step = currentOpacity < target ? step : -step;
+        clearInterval(obj.alpha);
+        obj.alpha = setInterval(function(){
+            currentOpacity = getStyle(obj,'opacity')*100;
+            var nextOpacity = currentOpacity + step;
+            if(step > 0 && nextOpacity > target || step < 0 && nextOpacity < target){
+                nextOpacity = target;
+            }
+            obj.style.opacity = nextOpacity/100;
+            obj.style.filter = 'alpha(opacity:'+nextOpacity+')';
+            if(nextOpacity == target){
+                clearInterval(obj.alpha);
+                endFn && endFn();
+            }
+        },frequency);
+    }
+</script>
 </body>
 </html>
