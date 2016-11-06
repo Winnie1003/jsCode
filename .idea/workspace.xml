@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7370f2ee-de79-4dd9-99a3-41530196ed44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js11文字搬运工.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js11文字搬运工.html" />
     </list>
     <ignored path="jsCode.iws" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="js11查找、替换、删除.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="62.206898">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="84" selection-end-column="106" />
+            <state vertical-scroll-proportion="-3.310345">
+              <caret line="177" column="19" selection-start-line="177" selection-start-column="19" selection-end-line="178" selection-end-column="19" />
               <folding>
                 <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
                 <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
@@ -51,8 +50,8 @@
       <file leaf-file-name="js11文字搬运工.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11文字搬运工.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44444445">
-              <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.7222222">
+              <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -61,8 +60,8 @@
       <file leaf-file-name="js10图片时间无动画版.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-13.655172">
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,8 +90,8 @@
       <file leaf-file-name="js10倒计时实例.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时实例.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.793104">
-              <caret line="240" column="13" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
+            <state vertical-scroll-proportion="-11.034483">
+              <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -140,6 +139,7 @@
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js12随机产生100个0-1000不重复的整数.html" />
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html" />
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/文字搬运工.html" />
+        <option value="$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html" />
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js11文字搬运工.html" />
       </list>
     </option>
@@ -310,7 +310,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25256222" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -342,7 +342,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -725,22 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时问题.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9310344">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间动画版.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="5.5172415">
@@ -759,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11查找、替换、删除.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="62.206898">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="84" selection-end-column="106" />
+        <state vertical-scroll-proportion="-3.310345">
+          <caret line="177" column="19" selection-start-line="177" selection-start-column="19" selection-end-line="178" selection-end-column="19" />
           <folding>
             <marker date="1478355575428" expanded="true" signature="5328:5345" placeholder="..." />
             <marker date="1478355575428" expanded="true" signature="6043:6060" placeholder="..." />
@@ -768,18 +754,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时问题.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9310344">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10倒计时实例.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.793104">
-          <caret line="240" column="13" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
+        <state vertical-scroll-proportion="-11.034483">
+          <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.655172">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js11文字搬运工.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445">
-          <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.7222222">
+          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
           <folding />
         </state>
       </provider>
