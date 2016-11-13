@@ -26,6 +26,9 @@
             top:0;
             left:0;
         }
+        img{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +76,23 @@
 </ul>
 <script src="js/miaov.js"></script>
 <script>
+    window.onload = function(){
+        var aLi = document.getElementsByTagName('li');
+        var flag = 0;
+        for(var i=0;i<aLi.length;i++){
+            fnSlide(aLi[i]);
+        }
+        function fnSlide(li){
+            var oDiv = li.getElementsByTagName('div')[0];
+             function fnSlideOnce(){
+                 setTimeout(function(){
+                     flag = flag == 0 ? -50:0;
+                     doMove(oDiv,'top',10,flag,fnSlideOnce);
+                 },Math.random()*2000+1000);
+             }
+            fnSlideOnce();
+        }
+    }
 </script>
 </body>
 </html>
