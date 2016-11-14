@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义字体形状</title>
+    <style>
+        html,body,ul{
+            margin:0;
+            padding:0;
+        }
+        #wrapper{
+            background: url("img/12-3-bg.jpg") 0 0 no-repeat;
+        }
+        #showbox{
+            width: 400px;
+            height:300px;
+            border:1px solid #ccc;
+        }
+        textarea{
+            width:400px;
+            height:150px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="showbox">
+
+        </div>
+        <select name="fontStyle" id="fontStyle">
+            <option value="balloon">气球字体</option>
+            <option value="heart">爱心字体</option>
+            <option value="jiong">囧字体</option>
+            <option value="knife">砍刀字体</option>
+            <option value="shuai">衰字体</option>
+            <option value="默认字体" selected>默认字体</option>
+        </select>
+        <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="确定">
+    </div>
+</body>
+</html>
