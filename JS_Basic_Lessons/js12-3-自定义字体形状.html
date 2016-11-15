@@ -10,15 +10,38 @@
         }
         #wrapper{
             background: url("img/12-3-bg.jpg") 0 0 no-repeat;
+            width:556px;
+            height:535px;
+            position: relative;
         }
         #showbox{
-            width: 400px;
-            height:300px;
-            border:1px solid #ccc;
+            width: 402px;
+            height:288px;
+            border:1px solid red;
+            position:absolute;
+            top:90px;
+        }
+        select{
+            position:absolute;
+            top:384px;
+            left:40px;
         }
         textarea{
             width:400px;
-            height:150px;
+            height:96px;
+            border:1px solid red;
+            position:absolute;
+            top:404px;
+            resize:none;
+
+
+        }
+        div input{
+            position:absolute;
+            top:507px;
+            left:321px;
+            width:80px;
+            outline:none;
 
         }
     </style>
@@ -37,7 +60,7 @@
             <option value="默认字体" selected>默认字体</option>
         </select>
         <textarea name="textarea" id="" cols="30" rows="10"></textarea>
-        <input type="button" value="确定">
+        <input type="button" value="发送">
     </div>
 </body>
 </html>
