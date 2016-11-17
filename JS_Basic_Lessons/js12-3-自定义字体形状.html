@@ -69,10 +69,52 @@
             <option value="jiong">囧字体</option>
             <option value="knife">砍刀字体</option>
             <option value="shuai">衰字体</option>
-            <option value="默认字体" selected>默认字体</option>
+            <option value="default" selected>默认字体</option>
         </select>
         <textarea name="textarea" id="" cols="30" rows="10"></textarea>
-        <input type="button" value="发送(S)">
+        <input id="send" type="button" value="发送(S)">
     </div>
+    <script>
+        window.onload = function(){
+            var oShowbox = document.getElementById('showbox');
+            var oSelect  = document.getElementsByTagName('select')[0];
+            var oTextarea = document.getElementsByTagName('textarea')[0];
+            var oSend = document.getElementsByTagName('input')[0];
+            var json = {
+                'balloon':'img/12-3-balloon.png',
+                'heart':'img/12-3-heart.gif',
+                'jiong':'img/12-3-jiong.gif',
+                'knife':'img/12-3-knife.gif',
+                'shuai':'img/12-3-shuai.gif'
+
+            };
+            oSend.onclick = function(){
+                var str = oTextarea.value;
+                if(str == '') {
+                    alert('请在下面的输入框中输入文字后点击发送!');
+                }
+                if( oSelect.value == 'default' ) {
+                    oShowbox.innerHTML += str + '<br/>';
+                    oTextarea.value = '';
+                }
+//                for (attr in json) {
+//                    useFont(attr, json[attr], str);
+//                }
+            }
+            function useFont(fontStyle, url, str) {
+                if(oSelect.value == fontStyle){
+                    var arr = str.split('');
+                    str = '';
+                    for(var i=0; i<arr.length; i++) {
+
+                        str += '<div><img src = "' + url + '"><span>' + arr[i] + '<span></div>'
+                    }
+                    oShowbox.innerHTML += str + '<br/>';
+                    oTextarea.value = '';
+                }
+            }
+
+        }
+    </script>
 </body>
 </html>
