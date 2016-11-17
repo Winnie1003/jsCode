@@ -56,6 +56,16 @@
             border-radius: 5px;
 
         }
+        #showbox div{
+            width:20px;
+            font-size:16px;
+            display:inline-block;
+            margin:2px 0;
+        }
+        div img{
+            width:16px;
+            height:16px;
+        }
     </style>
 </head>
 <body>
@@ -94,12 +104,12 @@
                     alert('请在下面的输入框中输入文字后点击发送!');
                 }
                 if( oSelect.value == 'default' ) {
-                    oShowbox.innerHTML += str + '<br/>';
+                    oShowbox.innerHTML += str;
                     oTextarea.value = '';
                 }
-//                for (attr in json) {
-//                    useFont(attr, json[attr], str);
-//                }
+                for (attr in json) {
+                    useFont(attr, json[attr], str);
+                }
             }
             function useFont(fontStyle, url, str) {
                 if(oSelect.value == fontStyle){
