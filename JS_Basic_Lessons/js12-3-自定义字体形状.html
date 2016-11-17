@@ -108,7 +108,7 @@
                     oTextarea.value = '';
                 }
                 for (attr in json) {
-                    useFont(attr, json[attr], str);
+                    useFont(attr, json[attr], str) //调用字体选择函数
                 }
             }
             function useFont(fontStyle, url, str) {

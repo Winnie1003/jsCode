@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7370f2ee-de79-4dd9-99a3-41530196ed44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js12-3-自定义字体形状.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js12-3-自定义字体形状.html" />
     </list>
     <ignored path="jsCode.iws" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="js12-3-自定义字体形状.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-3-自定义字体形状.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7222222">
-              <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.13194445">
+              <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -695,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-3-自定义字体形状.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7222222">
-          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.13194445">
+          <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
           <folding />
         </state>
       </provider>
