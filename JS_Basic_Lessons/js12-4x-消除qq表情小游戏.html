@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消除qq表情小游戏</title>
+    <style>
+        #title{
+            width:800px;
+            margin:10px auto;
+            text-align:center;
+        }
+        #wrap{
+            width:800px;
+            height:450px;
+            border:1px solid #ccc;
+            margin:20px auto 0;
+            position:relative;
+            top:0;
+            left:0;
+        }
+        #score{
+            width:150px;
+            height:80px;
+            border:1px solid #ccc;
+            background-color:#efefc6;
+            position:absolute;
+            left:-152px;
+            top:-1px;
+        }
+        #score p{
+            font-family:"微软雅黑";
+            font-size:16px;
+            line-height: 16px;
+            text-align: center;
+        }
+        #box{
+            position:absolute;
+            top:0;
+            left:0;
+            width:800px;
+            height:450px;
+        }
+    </style>
+</head>
+<body>
+<div id="title">
+    <h2>你的鼠标有多快？</h2>
+    <p>游戏说明：点击“开始游戏”，随机掉下QQ表情，点中它，千万别让它掉下去！</p>
+    <input type="button" value="开始游戏">
+</div>
+<div id="wrap">
+    <div id="score">
+        <p>得分：0分</p>
+        <p>得分：0分</p>
+    </div>
+    <div id="box">
+
+    </div>
+</div>
+</body>
+</html>
