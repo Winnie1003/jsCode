@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>消除qq表情小游戏</title>
     <style>
+        body{
+            background: #f1f1f1;
+            font-family: "微软雅黑";
+            font-size:16px;
+            user-select: none; //css3新的属性，目前主流的浏览器大都兼容，但是要加上前缀，作用使文本不可选择
+        }
         #title{
             width:800px;
             margin:10px auto;
@@ -39,6 +45,7 @@
             left:0;
             width:800px;
             height:450px;
+            background: #fff;
         }
     </style>
 </head>
@@ -57,5 +64,13 @@
 
     </div>
 </div>
+<script>
+    window.onload = function(){
+        var oStart = document.getElementsByTagName('input');
+        oStart[0].onclick = function(){
+            alert('nihao');
+        }
+    }
+</script>
 </body>
 </html>
