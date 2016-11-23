@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7370f2ee-de79-4dd9-99a3-41530196ed44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html" />
     </list>
     <ignored path="jsCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js12-4x-消除qq表情小游戏.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html">
+      <file leaf-file-name="js12-4-消除qq表情小游戏.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3402778">
-              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.6180556">
+              <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="miaov.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -54,7 +65,7 @@
       <file leaf-file-name="js10图片时间无动画版.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.82758623">
               <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="41" selection-end-column="36" />
               <folding />
             </state>
@@ -121,6 +132,8 @@
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js12自定义字体形状.html" />
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js12-3-自定义字体形状.html" />
         <option value="$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html" />
+        <option value="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" />
+        <option value="$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html" />
       </list>
     </option>
   </component>
@@ -637,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-2-图片随机滚动.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4861112">
@@ -694,14 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="41" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/img/12-3-bg.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -715,10 +713,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html">
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3402778">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js10图片时间无动画版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82758623">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="41" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6180556">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
           <folding />
         </state>
       </provider>

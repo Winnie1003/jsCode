@@ -64,11 +64,19 @@
 
     </div>
 </div>
+<script src="js/miaov.js"></script>
 <script>
     window.onload = function(){
         var oStart = document.getElementsByTagName('input');
-        oStart[0].onclick = function(){
-            alert('nihao');
+        var aP = document.getElementsByTagName('p');
+        var oScore = document.getElementById('score');
+        var width = parseInt(getStyle(box,'width'));
+        var height = parseInt(getStyle(box,'height'));
+        var arrImg = ['img/12-4-1.png','img/12-4-2.png','img/12-4-3.png','img/12-4-4.png','img/12-4-5.png',
+            'img/12-4-6.png','img/12-4-7.png','img/12-4-8.png','img/12-4-9.png'];
+        oStart[0].onclick = creatImg;
+        function creatImg(){
+            this.value = '游戏进行中...';
         }
     }
 </script>

@@ -23,7 +23,7 @@ function doMove ( obj, attr, dir, target, endFn ) {
 	}, 30);
 }
 
-function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
+function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle(obj)[attr]; }
 
 function shake ( obj, attr, endFn ) {
 	
