@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7370f2ee-de79-4dd9-99a3-41530196ed44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js/miaov.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4x-消除qq表情小游戏.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html" afterPath="$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html" />
     </list>
     <ignored path="jsCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,9 +36,11 @@
       <file leaf-file-name="js12-4-消除qq表情小游戏.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6180556">
-              <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.5138889">
+              <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+              <folding>
+                <marker date="1479871991194" expanded="true" signature="2364:2447" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,7 +145,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1370" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -328,10 +328,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18389955" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -731,9 +731,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS_Basic_Lessons/js12-4-消除qq表情小游戏.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6180556">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.5138889">
+          <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+          <folding>
+            <marker date="1479871991194" expanded="true" signature="2364:2447" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

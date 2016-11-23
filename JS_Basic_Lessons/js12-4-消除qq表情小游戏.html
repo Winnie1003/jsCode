@@ -68,6 +68,7 @@
 <script>
     window.onload = function(){
         var oStart = document.getElementsByTagName('input');
+        var oBox = document.getElementById('box');
         var aP = document.getElementsByTagName('p');
         var oScore = document.getElementById('score');
         var width = parseInt(getStyle(box,'width'));
@@ -76,7 +77,13 @@
             'img/12-4-6.png','img/12-4-7.png','img/12-4-8.png','img/12-4-9.png'];
         oStart[0].onclick = creatImg;
         function creatImg(){
+            this.disabled = true;
             this.value = '游戏进行中...';
+            var x = Math.round(Math.random() * (width-24));
+            var n = Math.floor(Math.random() * arrImg.length);
+            oBox.innerHTML = '<img style="filter:alpha(opacity:100); opacity:1; position:absolute; top:0px; left:' + x + 'px;" src="' + arrImg[n] + '" />';
+
+
         }
     }
 </script>
