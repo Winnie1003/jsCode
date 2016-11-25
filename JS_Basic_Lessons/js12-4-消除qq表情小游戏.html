@@ -81,7 +81,11 @@
             this.value = '游戏进行中...';
             var x = Math.round(Math.random() * (width-24));
             var n = Math.floor(Math.random() * arrImg.length);
-            oBox.innerHTML = '<img style="filter:alpha(opacity:100); opacity:1; position:absolute; top:0px; left:' + x + 'px;" src="' + arrImg[n] + '" />';
+
+            oBox.innerHTML = '<img style="filter:alpha(opacity:100); opacity:1; position:absolute; top:0px;' +
+                    ' left:' + x + 'px;" src="' + arrImg[n] + '" />';
+            var aImg = document.getElementsByTagName('img');
+
 
 
         }
