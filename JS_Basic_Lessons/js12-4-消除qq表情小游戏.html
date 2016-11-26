@@ -85,6 +85,8 @@
             oBox.innerHTML = '<img style="filter:alpha(opacity:100); opacity:1; position:absolute; top:0px;' +
                     ' left:' + x + 'px;" src="' + arrImg[n] + '" />';
             var aImg = document.getElementsByTagName('img');
+            doMove(aImg[0],'top',num,height-24,function(){
+            });
 
 
 
