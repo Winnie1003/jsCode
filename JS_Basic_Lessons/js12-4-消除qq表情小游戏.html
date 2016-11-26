@@ -57,7 +57,7 @@
 </div>
 <div id="wrap">
     <div id="score">
-        <p>得分：0分</p>
+        <p>失分：0分</p>
         <p>得分：0分</p>
     </div>
     <div id="box">
@@ -66,32 +66,60 @@
 </div>
 <script src="js/miaov.js"></script>
 <script>
-    window.onload = function(){
+    window.onload = function() {
+        var wrap = document.getElementById('wrap');
         var oStart = document.getElementsByTagName('input');
         var oBox = document.getElementById('box');
         var aP = document.getElementsByTagName('p');
         var oScore = document.getElementById('score');
-        var width = parseInt(getStyle(box,'width'));
-        var height = parseInt(getStyle(box,'height'));
-        var arrImg = ['img/12-4-1.png','img/12-4-2.png','img/12-4-3.png','img/12-4-4.png','img/12-4-5.png',
-            'img/12-4-6.png','img/12-4-7.png','img/12-4-8.png','img/12-4-9.png'];
+        var width = parseInt(getStyle(box, 'width'));
+        var height = parseInt(getStyle(box, 'height'));
+        var num = 1;
+        var getpoints = 0;
+        var losepoints = 0;
+        var arrImg = ['img/12-4-1.png', 'img/12-4-2.png', 'img/12-4-3.png', 'img/12-4-4.png', 'img/12-4-5.png',
+            'img/12-4-6.png', 'img/12-4-7.png', 'img/12-4-8.png', 'img/12-4-9.png'];
         oStart[0].onclick = creatImg;
-        function creatImg(){
+        function creatImg() {
             this.disabled = true;
             this.value = '游戏进行中...';
-            var x = Math.round(Math.random() * (width-24));
+            var x = Math.round(Math.random() * (width - 24));
             var n = Math.floor(Math.random() * arrImg.length);
+            var aImg = document.getElementsByTagName('img');
+
 
             oBox.innerHTML = '<img style="filter:alpha(opacity:100); opacity:1; position:absolute; top:0px;' +
                     ' left:' + x + 'px;" src="' + arrImg[n] + '" />';
-            var aImg = document.getElementsByTagName('img');
-            doMove(aImg[0],'top',num,height-24,function(){
-            });
 
-
+        doMove(aImg[0], 'top', num, height - 24, function () {
+            aP[1].innerHTML = '失分：' + (++losepoints) + '分';
+            if (losepoints < 10) {
+                shake(wrap, 'top');
+                creatImg();
+            }else{
+                alert('失败了，重新开始吧！');
+                oBox.innerHTML = '';
+                num = 1;
+                getpoints = 0;
+                losepoints = 0;
+                aP[1].innerHTML = "得分：0分";
+                aP[2].innerHTML = "得分：0分";
+                oStart[0].value = '开始游戏';
+                oStart[0].disabled = false;
+            }
+        });
+        aImg[0].onmousedown = function(){
+            var that = this;
+            aP[2].innerHTML = '得分：'+(++getpoints)+'分';
+            shake(that,'left',function(){
+                num++;
+                creatImg();
+            })
+        }
 
         }
-    }
+
+    };
 </script>
 </body>
 </html>
