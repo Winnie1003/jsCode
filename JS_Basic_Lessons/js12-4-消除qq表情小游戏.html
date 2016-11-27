@@ -83,8 +83,8 @@
         function creatImg() {
             this.disabled = true;
             this.value = '游戏进行中...';
-            var x = Math.round(Math.random() * (width - 24));
-            var n = Math.floor(Math.random() * arrImg.length);
+            var x = Math.round(Math.random() * (width - 24));//四舍五入表情活动的宽度
+            var n = Math.floor(Math.random() * arrImg.length);//获取第n张表情图片
             var aImg = document.getElementsByTagName('img');
 
 
