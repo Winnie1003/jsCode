@@ -111,7 +111,6 @@
         aImg[0].onmousedown = function(){
             var that = this;
             that.src = 'img/12-4-qq.png';
-            clearInterval(that.timer);
             aP[2].innerHTML = '得分：'+(++getpoints)+'分';
             shake(that,'left',function(){
                 num++;
