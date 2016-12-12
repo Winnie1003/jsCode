@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>课堂练习-DOM操作</title>
-</head>
-<body>
+    <style>
+        div{
+            padding:40px 50px;
+        }
+        #div1 {
+            background: red;
+        }
+        #div2{
+            background: orange;
 
+        }
+        #div3{
+            background: blue;
+
+        }</style>
+</head>
+<body id="body">
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
 </body>
 <script>
+        var oDiv3 = document.getElementById('div3');
+        alert(oDiv3.offsetParent.id);
+
 
 </script>
 </html>
