@@ -2,34 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>课堂练习-DOM操作</title>
+    <title>DOM操作</title>
     <style>
-        div{
-            padding:40px 50px;
-        }
-        #div1 {
-            background: red;
-        }
-        #div2{
-            background: orange;
-
-        }
-        #div3{
-            background: blue;
-
-        }</style>
+    </style>
 </head>
-<body id="body">
-<div id="div1">
-    <div id="div2">
-        <div id="div3"></div>
-    </div>
-</div>
+<body>
+<input type="text">
+<input type="button" value="提交">
 </body>
 <script>
-        var oDiv3 = document.getElementById('div3');
-        alert(oDiv3.offsetParent.id);
+    window.onload = function(){
+        var oBtn = document.getElementsByTagName('input')[1];
+        oBtn.onclick = function(){
 
-
+        }
+    }
 </script>
 </html>
